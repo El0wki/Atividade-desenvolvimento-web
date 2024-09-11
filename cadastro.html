@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Html para cadastro</title>
+</head>
+
+<body>
+<h1>CADASTRO DE CLIENTES</h1>
+<p>Esta aplicação fornece uma interface de usuário básica que permite cadastrar informações em um banco de dados.</p>
+
+
+<section>
+<form id="form_cadastro" onsubmit="return validarSenhas()">
+<fieldset>
+<legend>Cadastro</legend>
+<input type="text" placeholder="Digite o nome completo" required>
+<br>
+<input type="email" placeholder="Digite o e-mail" required>
+<br>
+<input type="number" placeholder="Digite o telefone" required>
+<br>
+<input type="date" placeholder="Digite a data de nascimento" required size=12>
+<label>Digite sua data de nascimento</label>
+<br>
+<input type="password" id="senha" placeholder="Digite sua senha:" required>
+<br>
+<input type="password" id="confirmar_senha" placeholder="Confirme sua senha:" required>
+<br>
+</fieldset>
+<label for="genero">Selecione seu gênero:</label>
+<input id="genero" type="radio" name="genero_cliente" value="homem" required> Homem
+<input id="genero" type="radio" name="genero_cliente" value="mulher" required> Mulher
+<input id="genero" type="radio" name="genero_cliente" value="honda97" required> Honda 97
+<p></p>
+<button type="submit">Cadastrar</button>
+</section>
+
+</form>
+</body>
+<footer>
+<p>Esta aplicação produzida às 22:06 do dia 05/09 tem como função cadastrar clientes</p>
+<p>Contato: 0800 777 4002-8922</p>
+</footer>
+<script>
+function validarSenhas() {
+    var senha = document.getElementById("senha").value;
+    var confirmarSenha = document.getElementById("confirmar_senha").value;
+    
+    if (senha !== confirmarSenha) {
+        alert("As senhas não coincidem!");
+        return false;
+   }else{
+	alert("Cliente cadastrado com sucesso");
+	 document.getElementById("form_cadastro").reset();
+	return true;
+}
+}
+</script>
+</html>
